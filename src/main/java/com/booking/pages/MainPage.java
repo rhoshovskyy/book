@@ -165,70 +165,24 @@ public class MainPage {
 	}
 
 	public MainPage saveVisibleTowns() {
-		  
-		    visibleTowns=townList.size();
-	        //Creating new workbook
-			 XSSFWorkbook workbook = new XSSFWorkbook();
-			//creating a blank sheet
-			 XSSFSheet sheet =workbook.createSheet("Towns");
-
-			 int rowNum=0;
-			 for(WebElement item: townList){
-				 Row r=sheet.createRow(rowNum++);
-			      int cellIndex = 0;
-				 r.createCell(cellIndex++).setCellValue(item.getText());
-			 }
-				 
-				 try {
-					FileOutputStream out = new FileOutputStream(Data.TownsPath);
-					workbook.write(out);
-					out.close();
-					//System.out.println("savedDraftToFile method passed");
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-		
+		if(townList.size()>0){
+		visibleTowns=townList.size();
+	    Framework a = new Framework();
+		a.saveListToExel(townList, Data.townsPath);
 		System.out.println("There are "+ visibleTowns+" visible towns on the page");
+		  }
+		  else
+		  {
+			  System.out.println("there were no Towns");
+		  }
 		return this;
 		
 	}
 
 	public MainPage countTownsInFile() throws IOException {
 		
-		
-		
-		try {
-            FileInputStream file = new FileInputStream(new File(Data.TownsPath));
-            XSSFWorkbook workbook = new XSSFWorkbook(file);
-            
-            numberOfTownsInFile=0;
-       
-            XSSFSheet sheet = workbook.getSheetAt(0);
-
-            for (Row row : sheet) {
-                Iterator<Cell> cellIterator = row.cellIterator();
-                while (cellIterator.hasNext()) {
-                    Cell cell = cellIterator.next();
-                    numberOfTownsInFile++;
-//                    switch (cell.getCellType()) {
-//                        case Cell.CELL_TYPE_NUMERIC:
-//                            System.out.print(cell.getNumericCellValue() + " t");
-//                            break;
-//                        case Cell.CELL_TYPE_STRING:
-//                            System.out.print(cell.getStringCellValue() + " t");
-//                            break;
-//                    }
-                }
-            }
-            file.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-		
-		//System.out.println("number of Towns in file is: "+numberOfTownsInFile);
-		System.out.println("There are "+numberOfTownsInFile+ " towns in the file");
+		Framework a = new Framework();
+		numberOfTownsInFile = a.countExcelRows(Data.townsPath);
 		return this;
 
 		

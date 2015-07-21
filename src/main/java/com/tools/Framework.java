@@ -1,17 +1,29 @@
 package com.tools;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
+import java.util.List;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.booking.data.Data;
 import com.booking.pages.*;
 
 
@@ -57,6 +69,73 @@ public class Framework {
         reader.close();
         return fileData.toString();
     }
+	
+	public void saveListToExel(List<WebElement> elements,String saveDirectory){
+		
+		//Creating new workbook
+		 XSSFWorkbook workbook = new XSSFWorkbook();
+		//creating a blank sheet
+		 XSSFSheet sheet =workbook.createSheet("Towns");
+
+		 int rowNum=0;
+		 for(WebElement item: elements){
+			 Row r=sheet.createRow(rowNum++);
+		      int cellIndex = 0;
+			 r.createCell(cellIndex++).setCellValue(item.getText());
+		 }
+			 
+			 try {
+				FileOutputStream out = new FileOutputStream(saveDirectory);
+				workbook.write(out);
+				out.close();
+				//System.out.println("savedDraftToFile method passed");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	
+
+		
+	}
+	public int countExcelRows(String filepath){
+		int number = 0;
+		try {
+            FileInputStream file = new FileInputStream(new File(Data.townsPath));
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+            
+            
+       
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            for (Row row : sheet) {
+                Iterator<Cell> cellIterator = row.cellIterator();
+                while (cellIterator.hasNext()) {
+                    Cell cell = cellIterator.next();
+                    number++;
+//                    switch (cell.getCellType()) {
+//                        case Cell.CELL_TYPE_NUMERIC:
+//                            System.out.print(cell.getNumericCellValue() + " t");
+//                            break;
+//                        case Cell.CELL_TYPE_STRING:
+//                            System.out.print(cell.getStringCellValue() + " t");
+//                            break;
+//                    }
+                }
+            }
+            file.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+		return number;
+	}
+	
+	
+	
+	
+	
+	
 	public void setDefault()
 	{
 		HotelPage.wiFi=false;

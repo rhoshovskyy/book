@@ -7,8 +7,7 @@ import java.util.Scanner;
 public class Data {
 
  public static String usersFilePath="Tools/Users.txt";
- 
- public static String TownsPath="Tools/Towns.xlsx";
+ public static String townsPath="Tools/Towns.xlsx";
  
  
  public static String currentUserFirstName; //is set in logIn()
