@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="86301" started-at="2015-07-20T15:20:15Z" finished-at="2015-07-20T15:21:41Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="86301" started-at="2015-07-20T15:20:15Z" finished-at="2015-07-20T15:21:41Z">
+      <class name="com.booking.TestClass">
+        <test-method status="PASS" signature="start()[pri:0, instance:com.booking.TestClass@30384065]" name="start" is-config="true" duration-ms="6778" started-at="2015-07-20T18:20:15Z" finished-at="2015-07-20T18:20:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="firstTest()[pri:0, instance:com.booking.TestClass@30384065]" name="firstTest" duration-ms="5017" started-at="2015-07-20T18:20:22Z" finished-at="2015-07-20T18:20:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstTest -->
+        <test-method status="PASS" signature="drQuit()[pri:0, instance:com.booking.TestClass@30384065]" name="drQuit" is-config="true" duration-ms="114" started-at="2015-07-20T18:20:27Z" finished-at="2015-07-20T18:20:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- drQuit -->
+        <test-method status="PASS" signature="start()[pri:0, instance:com.booking.TestClass@30384065]" name="start" is-config="true" duration-ms="5987" started-at="2015-07-20T18:20:27Z" finished-at="2015-07-20T18:20:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="secondTest()[pri:0, instance:com.booking.TestClass@30384065]" name="secondTest" duration-ms="15338" started-at="2015-07-20T18:20:33Z" finished-at="2015-07-20T18:20:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- secondTest -->
+        <test-method status="PASS" signature="drQuit()[pri:0, instance:com.booking.TestClass@30384065]" name="drQuit" is-config="true" duration-ms="117" started-at="2015-07-20T18:20:48Z" finished-at="2015-07-20T18:20:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- drQuit -->
+        <test-method status="PASS" signature="start()[pri:0, instance:com.booking.TestClass@30384065]" name="start" is-config="true" duration-ms="6768" started-at="2015-07-20T18:20:48Z" finished-at="2015-07-20T18:20:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="thirdTest()[pri:0, instance:com.booking.TestClass@30384065]" name="thirdTest" duration-ms="21965" started-at="2015-07-20T18:20:55Z" finished-at="2015-07-20T18:21:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- thirdTest -->
+        <test-method status="PASS" signature="drQuit()[pri:0, instance:com.booking.TestClass@30384065]" name="drQuit" is-config="true" duration-ms="112" started-at="2015-07-20T18:21:17Z" finished-at="2015-07-20T18:21:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- drQuit -->
+        <test-method status="PASS" signature="start()[pri:0, instance:com.booking.TestClass@30384065]" name="start" is-config="true" duration-ms="5819" started-at="2015-07-20T18:21:17Z" finished-at="2015-07-20T18:21:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="forthTest()[pri:0, instance:com.booking.TestClass@30384065]" name="forthTest" duration-ms="10940" started-at="2015-07-20T18:21:23Z" finished-at="2015-07-20T18:21:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forthTest -->
+        <test-method status="PASS" signature="drQuit()[pri:0, instance:com.booking.TestClass@30384065]" name="drQuit" is-config="true" duration-ms="134" started-at="2015-07-20T18:21:34Z" finished-at="2015-07-20T18:21:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- drQuit -->
+        <test-method status="PASS" signature="start()[pri:0, instance:com.booking.TestClass@30384065]" name="start" is-config="true" duration-ms="5998" started-at="2015-07-20T18:21:34Z" finished-at="2015-07-20T18:21:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="fifthTest()[pri:0, instance:com.booking.TestClass@30384065]" name="fifthTest" duration-ms="1104" started-at="2015-07-20T18:21:40Z" finished-at="2015-07-20T18:21:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fifthTest -->
+        <test-method status="PASS" signature="drQuit()[pri:0, instance:com.booking.TestClass@30384065]" name="drQuit" is-config="true" duration-ms="90" started-at="2015-07-20T18:21:41Z" finished-at="2015-07-20T18:21:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- drQuit -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.booking.TestClass@30384065]" name="tearDown" is-config="true" duration-ms="0" started-at="2015-07-20T18:21:41Z" finished-at="2015-07-20T18:21:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.booking.TestClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
