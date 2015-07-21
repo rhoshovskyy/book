@@ -30,53 +30,53 @@ WebDriver driver;
 		setDefault();
 	}
 	
-//	@Test (priority = 1)
-//		public void firstTest() throws InterruptedException, AWTException, IOException  {
-//		 PageFactory.initElements(driver, MainPage.class)
-//		 .logInAs("User1")
-//		 .areTheCredsCorrect();
-//		
-//		Assert.assertTrue(LogedInMain.isUserLogedIn, "Credentials from file and the ones on WebSite do not match");
-//	}	
-//	
-//
-//	@Test(priority =2)
-//	public void secondTest() throws InterruptedException, AWTException{
-//		
-//		PageFactory.initElements(driver, MainPage.class)
-//		.setSearchLine("Monteneg")
-//		.setCheckInDate("22","March")
-//		.setCheckOutDate("30","March")
-//        .search()
-//	    .checkPopularHotelsFor("Hotel Montenegro");
-//		
-//		Assert.assertTrue(ResultPage.isInList, "Searched hotel was not found in the list");
-//}
-//	@Test(priority = 3)
-//	public void thirdTest() throws InterruptedException, AWTException{
-//		
-//		PageFactory.initElements(driver, MainPage.class)
-//		.setSearchLine("Monteneg")
-//		.setCheckInDate("22","March")
-//		.setCheckOutDate("30","March")
-//        .search()
-//        .goToPopularHotel("Hotel Montenegro")
-//        .checkForWiFi() 
-//        .checkForParking(); 
-//		
-//		Assert.assertTrue(HotelPage.wiFi && HotelPage.parking, "There is no Wifi or Parking");
-//	}
-//	@Test(priority = 4)
-//	public void forthTest() throws InterruptedException, AWTException, IOException{
-//		PageFactory.initElements(driver, MainPage.class)
-//		.logInAs("User1")
-//		.goToDestinationTips()
-//		.setSerchFor("Lviv")
-//		.search()
-//		.checkForResults();
-//		
-//		Assert.assertTrue(DestinationSearchResults.result, "There were no search results");
-//	}
+	@Test (priority = 1)
+		public void firstTest() throws InterruptedException, AWTException, IOException  {
+		 PageFactory.initElements(driver, MainPage.class)
+		 .logInAs("User1")
+		 .areTheCredsCorrect();
+		
+		Assert.assertTrue(LogedInMain.isUserLogedIn, "Credentials from file and the ones on WebSite do not match");
+	}	
+	
+
+	@Test(priority =2)
+	public void secondTest() throws InterruptedException, AWTException{
+		
+		PageFactory.initElements(driver, MainPage.class)
+		.setSearchLine("Monteneg")
+		.setCheckInDate("22","March")
+		.setCheckOutDate("30","March")
+        .search()
+	    .checkPopularHotelsFor("Splendid Conference & Spa Resort");
+		
+		Assert.assertTrue(ResultPage.isInList, "Searched hotel was not found in the list");
+}
+	@Test(priority = 3)
+	public void thirdTest() throws InterruptedException, AWTException{
+		
+		PageFactory.initElements(driver, MainPage.class)
+		.setSearchLine("Monteneg")
+		.setCheckInDate("22","March")
+		.setCheckOutDate("30","March")
+        .search()
+        .goToPopularHotel("Splendid Conference & Spa Resort")
+        .checkForWiFi() 
+        .checkForParking(); 
+		
+		Assert.assertTrue(HotelPage.wiFi && HotelPage.parking, "There is no Wifi or Parking");
+	}
+	@Test(priority = 4)
+	public void forthTest() throws InterruptedException, AWTException, IOException{
+		PageFactory.initElements(driver, MainPage.class)
+		.logInAs("User1")
+		.goToDestinationTips()
+		.setSerchFor("Lviv")
+		.search()
+		.checkForResults();
+		
+		Assert.assertTrue(DestinationSearchResults.result, "There were no search results");
+	}
 	@Test(priority = 5)
 	public void fifthTest() throws InterruptedException, IOException {
 		PageFactory.initElements(driver, MainPage.class)
