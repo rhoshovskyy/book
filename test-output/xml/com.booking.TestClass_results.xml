@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="first"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="55.417">
+  <properties />
+  
+  
+            <testcase name="secondTest" time="15.418" classname="com.booking.TestClass" />
+                <testcase name="firstTest" time="7.089" classname="com.booking.TestClass" />
+                <testcase name="fifthTest" time="1.052" classname="com.booking.TestClass" />
+                <testcase name="thirdTest" time="20.554" classname="com.booking.TestClass" />
+                <testcase name="forthTest" time="11.304" classname="com.booking.TestClass" />
+      
+</testsuite>

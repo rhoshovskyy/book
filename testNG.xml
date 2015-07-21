@@ -3,6 +3,12 @@
 
 <suite name="SuiteOne">
 
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter"/> 
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/> 
+</listeners>
+
+
   <test name="first">
     <classes>
        <class name="com.booking.TestClass" />
