@@ -4,6 +4,9 @@ package com.booking.pages;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -111,53 +114,7 @@ public class MainPage {
 	return this;
 		
 	}
-	public MainPage setCheckInDate(String day, String month) throws InterruptedException {
-		Select dayDD = new Select(inDayDD);
-		Select monthDD = new Select(inMonthDD);
-		List <WebElement> allDayOptions = dayDD.getOptions();
-		List <WebElement> allMonthOptions = monthDD.getOptions();
-		   
-		for(WebElement item: allDayOptions){
-
-			if(item.getText().contains(day)){
-				dayDD.selectByVisibleText(item.getText());
-				break;
-			}
-		}
-		   for(WebElement it: allMonthOptions){
-			   	if(it.getText().contains(month)){
-				   monthDD.selectByVisibleText(it.getText());
-				   break;
-				}
-		   }
-				Thread.sleep(1000);
-				return this;
-	}
-	public MainPage setCheckOutDate(String day, String month) throws InterruptedException {
-		  
-	Select dayDD = new Select(outDayDD);
-	Select monthDD = new Select(outMonthDD);
-	List <WebElement> allDayOptions = dayDD.getOptions();
-	List <WebElement> allMonthOptions = monthDD.getOptions();
-			   
-		   for(WebElement item: allDayOptions){
-
-				if(item.getText().contains(day)){
-					dayDD.selectByVisibleText(item.getText());
-					break;
-				}
-		   }
-		   for(WebElement it: allMonthOptions){
-			   
-			   if(it.getText().contains(month)){
-				   monthDD.selectByVisibleText(it.getText());
-				   break;
-				}
-		   }
-				Thread.sleep(1000);
-		   
-	return this;
-	}
+	
 	public ResultPage search() throws InterruptedException {
 		submitButton.click();
 		Thread.sleep(5000);
@@ -186,6 +143,50 @@ public class MainPage {
 		return this;
 
 		
+	}
+
+	public MainPage setCheckInDate(Date inDate) {
+		
+		Calendar cal = new GregorianCalendar();
+		cal.setTime(inDate);
+        Integer intYear = cal.get(Calendar.YEAR);
+        Integer intMont = cal.get(Calendar.MONTH)+1;
+        
+        String year= intYear.toString();
+        String month = intMont.toString();
+        
+        String monthValue=year+"-"+month;
+		
+        Select dayDD = new Select(inDayDD);
+    	Select monthDD = new Select(inMonthDD);
+		
+    	dayDD.selectByIndex(cal.get(Calendar.DAY_OF_MONTH));
+    	monthDD.selectByValue(monthValue);
+    	
+    			
+		return this;
+	}
+
+	public MainPage setCheckOutDate(Date outDate) {
+	
+		Calendar cal = new GregorianCalendar();
+		cal.setTime(outDate);
+		
+        Integer intYear = cal.get(Calendar.YEAR);
+        Integer intMont = cal.get(Calendar.MONTH)+1;
+        
+        String year= intYear.toString();
+        String month = intMont.toString();
+        
+        String monthValue=year+"-"+month;
+		
+        Select dayDD = new Select(outDayDD);
+    	Select monthDD = new Select(outMonthDD);
+		
+    	dayDD.selectByIndex(cal.get(Calendar.DAY_OF_MONTH));
+    	monthDD.selectByValue(monthValue);
+
+		return this;
 	}
 	
 }

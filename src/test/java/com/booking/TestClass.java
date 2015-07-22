@@ -2,8 +2,10 @@ package com.booking;
 
 
 import java.awt.AWTException;
-
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -41,24 +43,32 @@ WebDriver driver;
 	
 
 	@Test(priority =2)
-	public void secondTest() throws InterruptedException, AWTException{
+	public void secondTest() throws InterruptedException, AWTException, ParseException{
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");	
+		Date inDate = sdf.parse("2016-03-22");
+		Date outDate = sdf.parse("2016-03-30");
 		
 		PageFactory.initElements(driver, MainPage.class)
 		.setSearchLine("Monteneg")
-		.setCheckInDate("22","March")
-		.setCheckOutDate("30","March")
+		.setCheckInDate(inDate)
+		.setCheckOutDate(outDate)
         .search()
-	    .checkPopularHotelsFor("Splendid Conference & Spa Resort");
+       .checkPopularHotelsFor("Splendid Conference & Spa Resort");
 		
 		Assert.assertTrue(ResultPage.isInList, "Searched hotel was not found in the list");
 }
 	@Test(priority = 3)
-	public void thirdTest() throws InterruptedException, AWTException{
+	public void thirdTest() throws InterruptedException, AWTException, ParseException{
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");	
+		Date inDate = sdf.parse("2016-03-22");
+		Date outDate = sdf.parse("2016-03-30");
 		
 		PageFactory.initElements(driver, MainPage.class)
 		.setSearchLine("Monteneg")
-		.setCheckInDate("22","March")
-		.setCheckOutDate("30","March")
+		.setCheckInDate(inDate)
+		.setCheckOutDate(outDate)
         .search()
         .goToPopularHotel("Splendid Conference & Spa Resort")
         .checkForWiFi() 
